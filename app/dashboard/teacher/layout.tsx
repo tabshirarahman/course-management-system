@@ -21,7 +21,9 @@ export default function TeacherLayout({
   return (
     <div className="flex min-h-screen bg-background">
       <aside className="w-64 border-r border-border bg-card p-6">
-        <h2 className="text-2xl font-bold text-primary mb-8">CMS Teacher</h2>
+        <h2 className="text-2xl font-bold text-primary mb-8">
+          Academic Course Management System Teacher
+        </h2>
         <TeacherSidebar />
         <Button
           variant="outline"

@@ -68,7 +68,9 @@ export default function SignUpPage() {
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Create Account</CardTitle>
-          <CardDescription>Join CMS and start learning</CardDescription>
+          <CardDescription>
+            Join Academic Course Management System and start learning
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
