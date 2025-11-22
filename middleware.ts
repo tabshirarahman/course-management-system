@@ -31,7 +31,7 @@ export function middleware(request: NextRequest) {
 
   const [, allowedRoles] = protectedRoute
   if (!allowedRoles.includes(payload.role)) {
-    return NextResponse.redirect(new URL("/unauthorized", request.url))
+    return NextResponse.redirect(new URL("/", request.url))
   }
 
   const requestHeaders = new Headers(request.headers)

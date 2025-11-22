@@ -1,7 +1,7 @@
-import mongoose, { Schema, type Document } from "mongoose"
+import mongoose, { Schema, Types, type Document } from "mongoose"
 
-export interface ICourse extends Document {
-  _id: string
+export interface ICourse {
+  _id?: string;
   title: string
   description: string
   category: string

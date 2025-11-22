@@ -2,6 +2,7 @@ import { dbConnect } from "@/lib/db"
 import { Course } from "@/models/course"
 import { createCourseSchema } from "@/schemas/course"
 import { type NextRequest, NextResponse } from "next/server"
+import '@/models/user';
 
 export async function GET(request: NextRequest) {
   try {

@@ -39,6 +39,7 @@ export async function PUT(
     await dbConnect();
 
     const body = await request.json();
+    console.log("🚀 ~ PUT ~ body:", body)
     const validatedData = updateCourseSchema.parse(body);
 
     const course = await Course.findByIdAndUpdate(id, validatedData, {
