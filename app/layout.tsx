@@ -8,27 +8,11 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Course Management System",
-  description: "Complete course management platform for instructors and students",
-  generator: "LMS",
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
-  },
-}
+  title: "Academic Course Management System",
+  description:
+    "Complete Academic Course Management System platform for instructors and students",
+  generator: "Academic Course Management System",
+};
 
 export default function RootLayout({
   children,
