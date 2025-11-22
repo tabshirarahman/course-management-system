@@ -11,9 +11,11 @@ export async function GET(request: NextRequest) {
     const page = Number.parseInt(searchParams.get("page") || "1")
     const limit = Number.parseInt(searchParams.get("limit") || "10")
     const status = searchParams.get("status")
+    const teacherId = searchParams.get("teacherId");
 
     const query: any = {}
     if (status) query.status = status
+    if (teacherId) query.assignedTeacher = teacherId;
 
     const courses = await Course.find(query)
       .skip((page - 1) * limit)

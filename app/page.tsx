@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-card">
+    <div className="min-h-screen bg-linear-to-b from-background to-card">
       <nav className="border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-primary">CMS</h1>
@@ -21,8 +21,7 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center space-y-8">
           <h2 className="text-5xl font-bold text-foreground">
-            Learn and Teach with
-            <span className="text-primary"> CMS</span>
+            Academic Course Management System
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             A complete course management platform for instructors and students.
