@@ -71,8 +71,8 @@ export function CourseTable() {
             placeholder="Search courses..."
             value={search}
             onChange={(e) => {
-              setSearch(e.target.value)
-              setPage(1)
+              setSearch(e.target.value);
+              setPage(1);
             }}
           />
           <Link href="/dashboard/admin/courses/new">
@@ -81,9 +81,13 @@ export function CourseTable() {
         </div>
 
         {isLoading ? (
-          <div className="text-center py-8 text-muted-foreground">Loading...</div>
+          <div className="text-center py-8 text-muted-foreground">
+            Loading...
+          </div>
         ) : courses.length === 0 ? (
-          <div className="text-center py-8 text-muted-foreground">No courses found</div>
+          <div className="text-center py-8 text-muted-foreground">
+            No courses found
+          </div>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -98,40 +102,47 @@ export function CourseTable() {
                 </tr>
               </thead>
               <tbody>
-                {courses.map((course) => (
-                  <tr key={course._id} className="border-b hover:bg-muted/50">
-                    <td className="py-3 font-medium">{course.title}</td>
-                    <td className="py-3">{course.category}</td>
-                    <td className="py-3">${course.price}</td>
-                    <td className="py-3">{course.assignedTeacher.name}</td>
-                    <td className="py-3">
-                      <span
-                        className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          course.status === "published"
-                            ? "bg-green-100 text-green-800"
-                            : "bg-yellow-100 text-yellow-800"
-                        }`}
-                      >
-                        {course.status}
-                      </span>
-                    </td>
-                    <td className="py-3 space-x-2">
-                      <Link href={`/dashboard/admin/courses/${course._id}`}>
-                        <Button variant="outline" size="sm">
-                          Edit
+                {courses &&
+                  courses.map((course) => (
+                    <tr key={course._id} className="border-b hover:bg-muted/50">
+                      <td className="py-3 font-medium">{course.title}</td>
+                      <td className="py-3">{course.category}</td>
+                      <td className="py-3">${course.price}</td>
+                      <td className="py-3">
+                        {course.assignedTeacher && course.assignedTeacher.name}
+                      </td>
+                      <td className="py-3">
+                        <span
+                          className={`px-2 py-1 rounded-full text-xs font-medium ${
+                            course.status === "published"
+                              ? "bg-green-100 text-green-800"
+                              : "bg-yellow-100 text-yellow-800"
+                          }`}
+                        >
+                          {course.status}
+                        </span>
+                      </td>
+                      <td className="py-3 space-x-2">
+                        <Link href={`/dashboard/admin/courses/${course._id}`}>
+                          <Button variant="outline" size="sm">
+                            Edit
+                          </Button>
+                        </Link>
+                        <Button
+                          variant="destructive"
+                          size="sm"
+                          onClick={() => deleteCourse(course._id)}
+                        >
+                          Delete
                         </Button>
-                      </Link>
-                      <Button variant="destructive" size="sm" onClick={() => deleteCourse(course._id)}>
-                        Delete
-                      </Button>
-                    </td>
-                  </tr>
-                ))}
+                      </td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </div>
         )}
       </CardContent>
     </Card>
-  )
+  );
 }
